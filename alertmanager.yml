@@ -1,0 +1,18 @@
+global:
+  resolve_timeout: 1m
+
+route:
+  group_by: ['InstanceDown']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'email_notifications'
+
+receivers:
+  - name: 'email_notifications'
+    email_configs:
+      - to: 'balajis8895@gmail.com'
+        from: 'prometheus@example.com'
+        smarthost: 'smtp.gmail.com:587'
+        auth_username: 'baalaa08@gmail.com'
+        auth_password: 'slwe xmmh ncqb mgfa'
