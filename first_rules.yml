@@ -1,0 +1,11 @@
+groups:
+  - name: docker_containers
+    rules:
+      - alert: DockerContainerStopped
+        expr: engine_daemon_container_states_containers{state="stopped"} > 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Docker container stopped"
+          description: "The Docker container has stopped."
